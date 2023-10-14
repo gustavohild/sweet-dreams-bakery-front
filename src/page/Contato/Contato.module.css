@@ -1,0 +1,15 @@
+.content {
+    background-color: #EFE7FF;
+    width: 450px;
+    height: 380px;
+    border-radius: 30px;
+    padding-top: 1rem;
+    margin: 1.5rem;
+    padding: 2rem;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}

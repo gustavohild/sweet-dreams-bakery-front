@@ -1,0 +1,54 @@
+.container{
+    width: 100%;
+    align-items: center;
+    display: flex;
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
+
+.text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    align-items: center;  
+    border-bottom: 2px solid rgb(0, 0, 0);
+    display: flex;
+    padding-top: 1.5rem;
+    padding-bottom: 0.5rem;
+    gap: 30rem;    
+}
+
+.descricaoBolo {
+    font-size: 1rem;
+    padding: 2rem 0;
+    flex-direction: column;     
+}
+
+.foto {
+    width: 400px;
+    height: 200px;  
+}
+
+.button {
+    width: 167px;
+    height: 44px;
+    background-color: #493979;
+    border-radius: 30px;
+    color: white;
+    border:none;
+    text-transform: uppercase;
+    font-size: 20px;
+    margin: 0.5rem; 
+    text-transform: uppercase;
+}
+
+.button:hover {
+    background-color: #221055;
+}
+
+.adicionar {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.contentInfo {
+    height: 250px;
+}

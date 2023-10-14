@@ -1,0 +1,89 @@
+.content {
+    width: 1000px;
+    border-radius: 30px;
+    padding-top: 2rem; 
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+.formHeader{
+    background-color: #F1F1F1;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px;
+    padding: 0.5rem;
+}
+
+.control {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 1rem;
+    border-bottom: 1px solid #C6C6C6;
+    font-weight: bold;
+}
+
+.inputControl {
+    width: 90%;
+    font-size: 1rem;
+    padding: 0.6rem;
+    border: none;
+}
+
+.subForm {
+    display: flex;
+}
+
+.button {
+    width: 300px;
+    background-color: #493979;
+    border-radius: 15px;
+    color: white;
+    border:none;
+    font-size: 25px;
+    padding: 1rem;
+}
+
+.controlButton {
+    padding-top: 2rem;
+    display: grid;
+    place-content: center;
+}
+
+.detailHeader{
+    display: flex;
+    padding: 1rem 0.5rem;
+    background-color: #F1F1F1;
+    border-radius: 20px;
+    justify-content: space-between;
+}
+
+.detailHearderInfo{
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+}
+
+.orderTableHeader{
+    background-color: #F1F1F1;
+    border-radius: 20px;
+    height: 2rem;
+
+}
+
+.test{
+    padding-top: 1rem;
+    border-bottom: 1px solid red;
+    background-color: red;
+}
+
+.buttonEdit{
+    border: none;
+}
+
+.buttonEdit:hover {
+    transform: scale(1.1);
+}

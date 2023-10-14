@@ -1,0 +1,17 @@
+.container {
+    height: calc(100vh - 155px);
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 10rem;
+    overflow: auto;
+    width: 100vw;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    width: 47%;
+    align-self: flex-end;
+    font-size: 0.8rem;
+}
+

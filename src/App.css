@@ -1,0 +1,45 @@
+.errors {
+    color: #ff0000;
+    font-size: 1rem;
+}
+
+.baseButton {
+    background-color: #493979;
+    border-radius: 30px;
+    border:none;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+    min-width: 167px; 
+    padding: 1rem;
+    transition: all .3s ease;
+    text-transform: uppercase;
+}
+
+.baseButton:hover {
+    background-color: #221055;
+    transform: scale(1.1);
+}
+
+.baseCard{
+    width: 315px;
+    border-radius: 30px;
+    padding-top: 2rem; 
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding: 2rem;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.cakeCardContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 3rem;
+}
+
+
+

@@ -1,0 +1,31 @@
+.content{
+    display: flex;
+    border-bottom: 1px solid black;
+    justify-content: space-between;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.detailHearderInfo{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+    
+}
+
+.button{
+    all:unset;
+    border: 1px solid #000;
+    border-radius: 50%;
+    cursor: pointer;
+    display: grid;
+    height: 35px;
+    place-items: center;
+    width: 35px;
+}
+
+.button:hover {
+    transform: scale(1.1);
+    background-color: #e0dded;
+}

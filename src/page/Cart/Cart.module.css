@@ -1,0 +1,93 @@
+.content {
+    width: 1000px;
+    border-radius: 30px;
+    padding-top: 2rem; 
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+.detailHeader{
+    display: flex;
+    padding: 1rem 0.5rem;
+    background-color: #F1F1F1;
+    border-radius: 20px;
+    justify-content: space-between;
+}
+
+.detailHearderInfo{
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+}
+
+.valueHeader{
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.controlHeader{
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.selectHead{
+    align-items: center;
+    display: flex;
+    font-size: 1.2rem;
+    color: #000;
+    font-weight: bold;
+    gap: 0.5rem;
+    text-transform: uppercase;
+}
+
+.button {
+    width: 200px;
+    background-color: #493979;
+    border-radius: 15px;
+    color: white;
+    border:none;
+    font-size: 20px;
+    padding: 1rem;
+    padding-bottom: 1rem;
+}
+
+.button:hover {
+    transform: scale(1.1);
+    background-color: #221055;
+}
+
+.controlButton {
+    padding-top: 1rem;
+    display: grid;
+    place-content: center;
+}
+
+.inputHeader,
+.inputHeader input {
+    font-size: 1.2rem;
+}
+
+.detailModal{
+    border: 1px solid black;
+    border-radius: 30px;  
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    text-transform: uppercase;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.iconButton{
+    all: unset;
+    cursor: pointer;
+}

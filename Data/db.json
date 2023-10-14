@@ -1,0 +1,37 @@
+{
+  "user": [
+    {
+      "name": "Guilherme Buci",
+      "email": "guilherme.buci@venturus.org.br",
+      "password": "11111111",
+      "address": "Rua Antônio Marques Serra",
+      "number": "545",
+      "neighborhood": "Jardim Antonio Von Zuben",
+      "city": "Campinas",
+      "state": "SP",
+      "zipcode": "13044500",
+      "id": 1
+    }
+  ],
+  "cake": [{
+    "id": 1,
+    "name": "Goibada",
+    "description": "Massa de milho",
+    "value": 5.00,
+    "quantity": 1
+},
+{
+    "id": 2,
+    "name": "Laranja",
+    "description": "Massa de laranja",
+    "value": 10.00,
+    "quantity": 1
+},
+{
+    "id": 3,
+    "name": "Chocolate",
+    "description": "Massa de chocolate",
+    "value": 15.00,
+    "quantity": 1
+}]
+}

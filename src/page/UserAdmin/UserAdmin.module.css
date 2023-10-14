@@ -1,0 +1,22 @@
+.content {
+    width: 1000px;
+    border-radius: 30px;
+    padding-top: 2rem; 
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+.detailHeader{
+    display: flex;
+    padding: 1rem 0.5rem;
+    background-color: #F1F1F1;
+    border-radius: 20px;
+    justify-content: space-between;
+}
+
+.detailHearderInfo{
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+}

@@ -1,0 +1,62 @@
+.container {
+    width: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.content {
+    width: 500px;
+    border-radius: 30px;
+    padding-top: 2rem; 
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding: 2rem;
+    margin-top: 1rem;
+}
+
+.formHeader {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    align-items: center;  
+    display: flex;
+    padding-top: 1rem;
+    gap: 2rem;    
+}
+
+.button {
+    width: 100%;
+    background-color: #493979;
+    border-radius: 15px;
+    color: white;
+    border:none;
+    font-size: 25px;
+    padding: 0.8rem;
+    text-transform: uppercase;
+}
+
+.button:hover {
+    background-color: #221055;
+}
+
+
+.controlButton {
+    padding-top: 1.5rem;
+}
+
+.formFooter {
+    font-size: 1.3rem;
+    padding-top: 3rem;
+    flex-direction: column;     
+}
+
+.control {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem; 
+    padding-top: 1rem;    
+}
+
+.inputControl {
+    width: 100%;
+    border-radius: 15px;
+    font-size: 1rem;
+    padding: 1rem;
+}

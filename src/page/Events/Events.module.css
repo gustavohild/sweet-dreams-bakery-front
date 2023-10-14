@@ -1,0 +1,10 @@
+.container {
+    height: calc(100vh - 155px);
+    display: flex;
+    overflow: auto;
+    justify-content: center;
+}
+
+.content {
+    width: min(100vw, 1200px);
+}
