@@ -4,7 +4,7 @@ const useHomeApi = () => {
   const list = () => useQuery({
     queryKey: ['repoData'],
     queryFn: () =>
-      fetch('http://localhost:8080/cake')
+      fetch('https://sweet-dreams-bakery.railway.internal/cake')
         .then((res) => res.json(),
       ),
   })
