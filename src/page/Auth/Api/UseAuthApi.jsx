@@ -4,7 +4,7 @@ const urlApi = import.meta.env.APP_API;
 
 const useAuthApi = () => {
   const post = (credential) => {
-    return fetch(`https://sweet-dreams-bakery.railway.internal/auth/login`, {
+    return fetch(`sweet-dreams-bakery.railway.internal/auth/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

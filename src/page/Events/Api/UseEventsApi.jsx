@@ -4,7 +4,7 @@ const useEventsApi = () => {
   const list = () => useQuery({
     queryKey: ['eventsData'],
     queryFn: () =>
-      fetch('https://sweet-dreams-bakery.railway.internal/combo')
+      fetch('sweet-dreams-bakery.railway.internal/combo')
         .then((res) => res.json(),
       ),
   })

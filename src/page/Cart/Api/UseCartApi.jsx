@@ -9,7 +9,7 @@ const useCartApi = () => {
 
   const post = async (token, pedido, id) => {
     console.log('AQUI', token, pedido, id)
-    const response = await fetch(`https://sweet-dreams-bakery.railway.internal/order?customer_id=${id}`, {
+    const response = await fetch(`sweet-dreams-bakery.railway.internal/order?customer_id=${id}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

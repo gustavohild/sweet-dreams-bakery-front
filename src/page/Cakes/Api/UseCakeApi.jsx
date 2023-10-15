@@ -4,7 +4,7 @@ const useCakeApi = () => {
   const list = () => useQuery({
     queryKey: ['cakeData'],
     queryFn: () =>
-      fetch('https://sweet-dreams-bakery.railway.internal/cake')
+      fetch('sweet-dreams-bakery.railway.internal/cake')
         .then((res) => res.json(),
       ),
   })

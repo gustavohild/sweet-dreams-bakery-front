@@ -1,7 +1,7 @@
 import { useMutation } from "@tanstack/react-query"
 
 const create = async (user) => {
-    const response = await fetch('https://sweet-dreams-bakery.railway.internal/customer', {
+    const response = await fetch('sweet-dreams-bakery.railway.internal/customer', {
       method: 'POST',
       headers: {      'Content-Type': 'application/json',
       },    body: JSON.stringify( user ),
