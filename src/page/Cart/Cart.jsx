@@ -32,8 +32,8 @@ export default function Cart() {
 
     const handleOrder = async () => {
         
-        const formatedData = { cakeList, comboList: eventList, status: 'Aguardando pagamento', paymentDto: {amount: total, transferDate: Date.now()} }
-        console.log(id)
+        const formatedData = { cakeList, comboList: eventList, status: "AGUARDANDO_PAGAMENTO", paymentDto: {amount: total, transferDate: "15/10/2023 11:09"}, pickupDate: "15/10/2023 11:09" }
+        console.log(formatedData)
         try {
             await post(token, formatedData, id)
             toast.success("Cadastro realizado com sucesso!", { position: toast.POSITION.TOP_CENTER });
