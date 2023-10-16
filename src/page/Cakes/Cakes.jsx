@@ -11,11 +11,13 @@ import styles from "./Cakes.module.css"
 import { useForm } from 'react-hook-form';
 import usePersonalizeCakeFormScheme from './Hooks/UsePersonalizeCakeFormScheme';
 import { yupResolver } from '@hookform/resolvers/yup';
-import useCakeApi from './Api/UseCakeApi';
+import { useCakeApi, useCustomCakeApi } from './Api/UseCakeApi';
 
 export default function Cakes() {
 
     const { list } = useCakeApi();
+    const { customCakeList } = useCustomCakeApi();
+    console.log(customCakeList);
     const { data, isLoading } = list();
 
     const formScheme = usePersonalizeCakeFormScheme();
