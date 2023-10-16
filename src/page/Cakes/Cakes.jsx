@@ -11,7 +11,8 @@ import styles from "./Cakes.module.css"
 import { useForm } from 'react-hook-form';
 import usePersonalizeCakeFormScheme from './Hooks/UsePersonalizeCakeFormScheme';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { useCakeApi, useCustomCakeApi } from './Api/UseCakeApi';
+import useCakeApi from './Api/UseCakeApi';
+import useCustomCakeApi from './Api/UseCakeApi';
 
 export default function Cakes() {
 
