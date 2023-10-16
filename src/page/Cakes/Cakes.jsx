@@ -19,6 +19,7 @@ export default function Cakes() {
     const { customCakeList } = useCustomCakeApi();
     const { data, isLoading } = list();
     const { data: customCake } = customCakeList();
+    console.log(customCake);
 
     const formScheme = usePersonalizeCakeFormScheme();
     const { register, handleSubmit, formState: { errors } } = useForm({
