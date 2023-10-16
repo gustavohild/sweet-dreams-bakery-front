@@ -16,8 +16,8 @@ export default function Cart() {
     const { removeCakeAction, cakeList, eventList, id, token } = useContext(AppProviderContext);
     const [total, setTotal] = useState(0);
     const calculaPreco = () => {
-       const cakeValue = cakeList.reduce((accumulator, currentValue) => accumulator + currentValue.price, 0)
-       const eventValue = eventList.reduce((accumulator, currentValue) => accumulator + currentValue.price, 0)
+       const cakeValue = cakeList.reduce((accumulator, currentValue) => accumulator + currentValue.amount, 0)
+       const eventValue = eventList.reduce((accumulator, currentValue) => accumulator + currentValue.amount, 0)
        setTotal( cakeValue + eventValue)
     }
     const handleDeleteCake = (cake) => {

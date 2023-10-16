@@ -66,7 +66,6 @@ export default function User() {
                     <div className={styles.content}>
                         <div className={styles.formHeader}>
                             <h3 className={styles.formHeader}>Dados do usuário</h3>
-                            <button type='button' className={styles.buttonEdit} onClick={() => setFormDisabled(!formDisabled)}><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAflJREFUWEfllssrRVEUh787lAklj5BnFEUZek8NCGXCH2fGyEBGiryTgZFblJJHBh4xQCSiVevU7jjO2efcvXVv9uzce/dZ3/qt31rr5iiykysyHv4VUAUwBZQBS8CNTTV8KdQBrAGNCnEPTAJ7SVA+gNqBHaA2FPwVGAfW46BcA4ky20CNBr0DHoBOff4ApoGV36BcAoWVeQRGFEhK1aQQT0ArIGX8cVwBhWGegVHgUCO2qH/q9HkWWPQFFOWZF2BMvSRxu4ANoFoh5oAFH0ACI54JMjdjvKtfxEergIwBOVdAn4+ShWFugRlgXj0iwT+BN6DcaP8h4MS1qZuBfaO1Zej1A2c6ew4iVBOlhuNgBDKLqduALaBesxRlBoFTI+sJYNl4lo4SmGPXg1GUkaHXoC82lQliyczZBaqMWZSoTHA5jUJhmGvNWsrkBCZNyaJgBoALlzC2QH8GYwNkA9MNbGb1TNjkcR6yhRGTV2YxcNpJfW4sxEtdlPJZcHq0/YMJLMtUuimf1Npx38cp9GVclDaXrgpOr5bJhJHNflQITJKHTCATXDxjlkn+78hmLxgmC5BXmDRAUZVwqozNpDZLFgbyApNVIW8wSUCFNkym+2mWa6YAaS+VFFCcqdMmbr0lbCe1CwCrPVpSQD5USXxnSZk6MRsfP/gGgE55JWu9FYwAAAAASUVORK5CYII=" /></button>
                         </div>
 
                         <div className={styles.control}>
@@ -122,9 +121,6 @@ export default function User() {
                             <label htmlFor="phone">Telefone:</label>
                             <input id="phone" name="phone" className={styles.inputControl} {...register('phone')} disabled={formDisabled} />
                             {errors.phone && <span className="errors">{errors.phone.message}</span>}
-                        </div>
-                        <div className={styles.controlButton}>
-                            <button type='submit' className='baseButton'>Salvar{loading && <box-icon name='loader' color='#ffffff' ></box-icon>}</button>
                         </div>
                     </div>
                 </form>
