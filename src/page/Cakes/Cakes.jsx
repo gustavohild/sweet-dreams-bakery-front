@@ -14,11 +14,11 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { useCakeApi, useCustomCakeApi }  from './Api/UseCakeApi';
 
 export default function Cakes() {
-
-    const { list } = useCakeApi();
     const { customCakeList } = useCustomCakeApi();
+    const { data: customCakeApi } = customCakeList();
+    const [ customCake, setCustomCake] = React.useState(customCakeApi);
+    const { list } = useCakeApi();
     const { data, isLoading } = list();
-    const { data: customCake } = customCakeList();
     console.log(customCake);
 
     const formScheme = usePersonalizeCakeFormScheme();
@@ -75,28 +75,28 @@ export default function Cakes() {
 
                         <label htmlFor="recheio">Cobertura:</label>
                         <select className={styles.select} id="recheio" {...register('recheio')}>
-                            {recheio.map((data, index) => (
+                            {customCake && recheio.map((data, index) => (
                                 <option value={data.price} key={index}>{data.specification}</option>
                             ))}
                         </select>
 
                         <label htmlFor="cobertura">Cobertura:</label>
                         <select className={styles.select} id="cobertura" {...register('cobertura')}>
-                            {cobertura.map((data, index) => (
+                            {customCake && cobertura.map((data, index) => (
                                 <option value={data.price} key={index}>{data.specification}</option>
                             ))}
                         </select>
 
                         <label htmlFor="tamanho">Tamanho:</label>
                         <select className={styles.select} id="tamanho" {...register('tamanho')}>
-                            {tamanho.map((data, index) => (
+                            {customCake && tamanho.map((data, index) => (
                                 <option value={data.price} key={index}>{data.specification}</option>
                             ))}
                         </select>
 
                         <label htmlFor="sabor">Sabor:</label>
                         <select className={styles.select} id="sabor" {...register('sabor')}>
-                            {sabor.map((data, index) => (
+                            {customCake && sabor.map((data, index) => (
                                 <option value={data.price} key={index}>{data.specification}</option>
                             ))}
                         </select>
