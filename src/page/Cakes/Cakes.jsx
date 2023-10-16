@@ -17,8 +17,8 @@ export default function Cakes() {
 
     const { list } = useCakeApi();
     const { customCakeList } = useCustomCakeApi();
-    console.log(customCakeList);
     const { data, isLoading } = list();
+    const { data: customCake } = customCakeList();
 
     const formScheme = usePersonalizeCakeFormScheme();
     const { register, handleSubmit, formState: { errors } } = useForm({
@@ -29,29 +29,13 @@ export default function Cakes() {
     const [openModal, setOpenModal] = useState(false);
     const notify = () => toast.success("Adicionado ao carrinho!", { position: toast.POSITION.TOP_CENTER });
 
-    const recheio = [
-        { value: 0, name: "Chocolate" },
-        { value: 1, name: "Creme" },
-        { value: 2, name: "Laranja" },
-    ]
+    const recheio = customCake.filter((cake) => cake.name === "filling");
 
-    const cobertura = [
-        { value: 0, name: "Caramelo" },
-        { value: 1, name: "Chocolate" },
-        { value: 2, name: "Coco" },
-    ]
+    const cobertura = customCake.filter((cake) => cake.name === "topping");
 
-    const tamanho = [
-        { price: 30, name: "P" },
-        { price: 45, name: "M" },
-        { price: 60, name: "G" },
-    ]
+    const tamanho = customCake.filter((cake) => cake.name === "size");
 
-    const sabor = [
-        { value: 0, name: "Coco" },
-        { value: 1, name: "Abacaxi" },
-        { value: 2, name: "Chocolate" },
-    ]
+    const sabor = customCake.filter((cake) => cake.name === "flavor");
 
     const handleAddToCart = (cake) => {
         addCakeAction(cake);
@@ -91,28 +75,28 @@ export default function Cakes() {
                         <label htmlFor="recheio">Cobertura:</label>
                         <select className={styles.select} id="recheio" {...register('recheio')}>
                             {recheio.map((data, index) => (
-                                <option value={data.value} key={index}>{data.name}</option>
+                                <option value={data.price} key={index}>{data.specification}</option>
                             ))}
                         </select>
 
                         <label htmlFor="cobertura">Cobertura:</label>
                         <select className={styles.select} id="cobertura" {...register('cobertura')}>
                             {cobertura.map((data, index) => (
-                                <option value={data.value} key={index}>{data.name}</option>
+                                <option value={data.price} key={index}>{data.specification}</option>
                             ))}
                         </select>
 
                         <label htmlFor="tamanho">Tamanho:</label>
                         <select className={styles.select} id="tamanho" {...register('tamanho')}>
                             {tamanho.map((data, index) => (
-                                <option value={data.value} key={index}>{data.name}</option>
+                                <option value={data.price} key={index}>{data.specification}</option>
                             ))}
                         </select>
 
                         <label htmlFor="sabor">Sabor:</label>
                         <select className={styles.select} id="sabor" {...register('sabor')}>
                             {sabor.map((data, index) => (
-                                <option value={data.value} key={index}>{data.name}</option>
+                                <option value={data.price} key={index}>{data.specification}</option>
                             ))}
                         </select>
                         <div className={styles.button}>
