@@ -37,7 +37,7 @@ export default function Cakes() {
 
     const onSubmit = (data) => {
         const cake = { id: `${data.recheio}${data.cobertura}${data.tamanho}${data.sabor}`, 
-            name: "Bolo Personalizado", description: `Bolo personalizado de ${recheio[data.recheio].specification} com cobertura de ${cobertura[data.cobertura].specification} sabor ${sabor[data.sabor].specification}`, amount: data.tamanho, quantity: 1 };
+        name: "Bolo Personalizado", description: `Bolo personalizado de ${data.recheio} com cobertura de ${data.cobertura} sabor ${data.sabor}`, amount: data.tamanho, quantity: 1 };
         setOpenModal(false);
         addCakeAction(cake);
         notify();
@@ -68,28 +68,28 @@ export default function Cakes() {
                         <label htmlFor="recheio">Recheio:</label>
                         <select className={styles.select} id="recheio" {...register('recheio')}>
                             {customCake && customCake.filter((cake) => cake.name === 'filling').map((data, index) => (
-                                <option value={data.price} key={index}>{data.specification}</option>
+                                <option value={data.specification} key={index}>{data.specification}</option>
                             ))}
                         </select>
 
                         <label htmlFor="cobertura">Cobertura:</label>
                         <select className={styles.select} id="cobertura" {...register('cobertura')}>
                             {customCake && customCake.filter((cake) => cake.name === 'topping').map((data, index) => (
-                                <option value={data.price} key={index}>{data.specification}</option>
+                                <option value={data.specification} key={index}>{data.specification}</option>
                             ))}
                         </select>
 
                         <label htmlFor="tamanho">Tamanho:</label>
                         <select className={styles.select} id="tamanho" {...register('tamanho')}>
                             {customCake && customCake.filter((cake) => cake.name === 'size').map((data, index) => (
-                                <option value={data.price} key={index}>{data.specification}</option>
+                                <option value={data.specification} key={index}>{data.specification}</option>
                             ))}
                         </select>
 
                         <label htmlFor="sabor">Sabor:</label>
                         <select className={styles.select} id="sabor" {...register('sabor')}>
                             {customCake && customCake.filter((cake) => cake.name === 'flavor').map((data, index) => (
-                                <option value={data.price} key={index}>{data.specification}</option>
+                                <option value={data.specification} key={index}>{data.specification}</option>
                             ))}
                         </select>
                         <div className={styles.button}>
