@@ -11,12 +11,15 @@ import styles from "./Cakes.module.css"
 import { useForm } from 'react-hook-form';
 import usePersonalizeCakeFormScheme from './Hooks/UsePersonalizeCakeFormScheme';
 import { yupResolver } from '@hookform/resolvers/yup';
-import useCakeApi from './Api/UseCakeApi';
+import { useCakeApi, useCustomCakeApi }  from './Api/UseCakeApi';
 
 export default function Cakes() {
-
+    const { customCakeList } = useCustomCakeApi();
+    const { data: customCakeApi } = customCakeList();
+    const [ customCake, setCustomCake] = React.useState(customCakeApi);
     const { list } = useCakeApi();
     const { data, isLoading } = list();
+    console.log(customCake);
 
     const formScheme = usePersonalizeCakeFormScheme();
     const { register, handleSubmit, formState: { errors } } = useForm({
@@ -27,29 +30,13 @@ export default function Cakes() {
     const [openModal, setOpenModal] = useState(false);
     const notify = () => toast.success("Adicionado ao carrinho!", { position: toast.POSITION.TOP_CENTER });
 
-    const recheio = [
-        { value: 0, name: "Chocolate" },
-        { value: 1, name: "Prestigio" },
-        { value: 2, name: "Ninho" },
-    ]
+    const recheio = customCake.filter((cake) => cake.name === "filling");
 
-    const cobertura = [
-        { value: 0, name: "Beijinho" },
-        { value: 1, name: "Brigadeiro" },
-        { value: 2, name: "Leite Ninho" },
-    ]
+    const cobertura = customCake.filter((cake) => cake.name === "topping");
 
-    const tamanho = [
-        { price: 30, name: "P" },
-        { price: 45, name: "M" },
-        { price: 60, name: "G" },
-    ]
+    const tamanho = customCake.filter((cake) => cake.name === "size");
 
-    const sabor = [
-        { value: 0, name: "Chocolate" },
-        { value: 1, name: "Prestigio" },
-        { value: 2, name: "Ninho" },
-    ]
+    const sabor = customCake.filter((cake) => cake.name === "flavor");
 
     const handleAddToCart = (cake) => {
         addCakeAction(cake);
@@ -88,29 +75,29 @@ export default function Cakes() {
 
                         <label htmlFor="recheio">Recheio:</label>
                         <select className={styles.select} id="recheio" {...register('recheio')}>
-                            {recheio.map((data, index) => (
-                                <option value={data.value} key={index}>{data.name}</option>
+                            {customCake && recheio.map((data, index) => (
+                                <option value={data.price} key={index}>{data.specification}</option>
                             ))}
                         </select>
 
                         <label htmlFor="cobertura">Cobertura:</label>
                         <select className={styles.select} id="cobertura" {...register('cobertura')}>
-                            {cobertura.map((data, index) => (
-                                <option value={data.value} key={index}>{data.name}</option>
+                            {customCake && cobertura.map((data, index) => (
+                                <option value={data.price} key={index}>{data.specification}</option>
                             ))}
                         </select>
 
                         <label htmlFor="tamanho">Tamanho:</label>
                         <select className={styles.select} id="tamanho" {...register('tamanho')}>
-                            {tamanho.map((data, index) => (
-                                <option value={data.value} key={index}>{data.name}</option>
+                            {customCake && tamanho.map((data, index) => (
+                                <option value={data.price} key={index}>{data.specification}</option>
                             ))}
                         </select>
 
                         <label htmlFor="sabor">Sabor:</label>
                         <select className={styles.select} id="sabor" {...register('sabor')}>
-                            {sabor.map((data, index) => (
-                                <option value={data.value} key={index}>{data.name}</option>
+                            {customCake && sabor.map((data, index) => (
+                                <option value={data.price} key={index}>{data.specification}</option>
                             ))}
                         </select>
                         <div className={styles.button}>

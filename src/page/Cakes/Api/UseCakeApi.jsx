@@ -1,10 +1,11 @@
 import { useQuery } from "@tanstack/react-query"
 
-const useCakeApi = () => {
+
+export const useCakeApi = () => {
   const list = () => useQuery({
     queryKey: ['cakeData'],
     queryFn: () =>
-      fetch('http://localhost:8080/cake')
+      fetch('https://sweet-dreams-bakery-sweet-dreams-bakery-pr-4.up.railway.app/cake')
         .then((res) => res.json(),
       ),
   })
@@ -14,4 +15,15 @@ const useCakeApi = () => {
   }
 }
 
-export default useCakeApi;
+export const useCustomCakeApi = () => {
+  const customCakeList = () => useQuery({
+    queryFn: () =>
+      fetch('https://sweet-dreams-bakery-sweet-dreams-bakery-pr-4.up.railway.app/cake/property')
+        .then((res) => res.json(),
+      ),
+  })
+  
+  return {
+    customCakeList
+  }
+}

@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query"
 
 const useUserApi = () => {
   const put = async (token, user) => {
-    const response = await fetch(`http://localhost:8080/customer/${user.id}`, {
+    const response = await fetch(`https://sweet-dreams-bakery-sweet-dreams-bakery-pr-4.up.railway.app/customer/${user.id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -17,7 +17,7 @@ const useUserApi = () => {
   const get = (token, email) => useQuery({
     queryKey: ['userData'],
     queryFn: () =>
-      fetch(`http://localhost:8080/customer?email=${email}`, {
+      fetch(`https://sweet-dreams-bakery-sweet-dreams-bakery-pr-4.up.railway.app/customer?email=${email}`, {
         method: 'GET',
         headers: { 
           Authorization: `Bearer ${token}`, 
