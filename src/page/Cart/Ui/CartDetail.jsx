@@ -9,7 +9,7 @@ export default function CartDetail({cake, removeCake}) {
                 <p><strong>Descrição:</strong> {cake.description}</p>
             </div>
             <div className={styles.detailHearderInfo}>
-                <strong>R$: {cake.amount}</strong>
+                <strong>R$: {cake.price}</strong>
                 <button className={styles.button} onClick={() => removeCake(cake)} ><box-icon name='trash' type='solid' ></box-icon></button>
             </div>
         </div>
