@@ -5,11 +5,12 @@ import UiModal from '../../shared/UI/UiModal/UiModal';
 import { AppProviderContext } from '../../shared/Providers/AppProviders';
 import useCartApi from './Api/UseCartApi';
 import { ToastContainer, toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 
 
 export default function Cart() {
-
+    const navigate = useNavigate();
     const { post } = useCartApi();
     const [openModal, setOpenModal] = useState(false);
     const { removeCakeAction, cakeList, eventList, id, token } = useContext(AppProviderContext);
@@ -27,20 +28,21 @@ export default function Cart() {
         calculaPreco()
     },[cakeList])
 
-    console.log(cakeList)
-    console.log('event', eventList)
-
     const handleOrder = async () => {
         
         const formatedData = { cakeList, comboList: eventList, status: "AGUARDANDO_PAGAMENTO", paymentDto: {amount: total, transferDate: "15/10/2023 11:09"}, pickupDate: "15/10/2023 11:09" }
-        console.log(formatedData)
         try {
             await post(token, formatedData, id)
-            toast.success("Cadastro realizado com sucesso!", { position: toast.POSITION.TOP_CENTER });
-            //navigate("/auth")
+            toast.success("Pedido realizado com sucesso!", { position: toast.POSITION.TOP_CENTER });
+            setOpenModal(true)
         } catch {
-            toast.error("Não foi possível realizar seu cadastro, tente novamente.", { position: toast.POSITION.TOP_CENTER });
+            toast.error("Não foi possível realizar seu pedido, tente novamente.", { position: toast.POSITION.TOP_CENTER });
         }
+    }
+
+    const handleCloseModal = () => {
+        setOpenModal(false) 
+        navigate("/user")
     }
 
     return (
@@ -91,16 +93,7 @@ export default function Cart() {
             <div className={styles.controlButton}>
                 <button className={styles.button} onClick={() => handleOrder()}>Confirmar</button>
             </div>
-            <UiModal isOpen={openModal} title='Pedido Realizado com Sucesso!' setModalOpen={() => setOpenModal(!openModal)}>
-                <div className={styles.detailModal}>
-                    <div>
-                        <p><strong>Nº DO PEDIDO:</strong> 13044800</p>
-                        <p><strong>DATA PEDIDO:</strong> 26/09/2023</p>
-                    </div>
-                    <div>
-                        <strong>Bolo de fuba</strong>
-                    </div>
-                </div>
+            <UiModal isOpen={openModal} title='Pedido Realizado com Sucesso!' setModalOpen={() => handleCloseModal()} >
                 <div className={styles.detailModal}>
                     <div>
                         <strong>Chave Pix:</strong> 45045450467840465604

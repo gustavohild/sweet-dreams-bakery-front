@@ -73,7 +73,7 @@ export default function Cakes() {
                 <div className={styles.containerselect}>
                     <form onSubmit={handleSubmit(onSubmit)} >
 
-                        <label htmlFor="recheio">Cobertura:</label>
+                        <label htmlFor="recheio">Recheio:</label>
                         <select className={styles.select} id="recheio" {...register('recheio')}>
                             {customCake && recheio.map((data, index) => (
                                 <option value={data.price} key={index}>{data.specification}</option>

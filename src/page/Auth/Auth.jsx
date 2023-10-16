@@ -32,7 +32,6 @@ export default function Auth() {
             }
             toast.error("Login e senha não encontrado, tente novamente.", { position: toast.POSITION.TOP_CENTER });
         } catch(error) {
-            console.log(error.message)
             toast.error("Login e senha não encontrado, tente novamente.", { position: toast.POSITION.TOP_CENTER });
             setLoading(false)
         }
