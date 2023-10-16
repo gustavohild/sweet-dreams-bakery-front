@@ -5,7 +5,7 @@ export const useCakeApi = () => {
   const list = () => useQuery({
     queryKey: ['cakeData'],
     queryFn: () =>
-      fetch('https://sweet-dreams-bakery-sweet-dreams-bakery-pr-4.up.railway.app/cake')
+      fetch('https://sweet-dreams-bakery-production.up.railway.app/cake')
         .then((res) => res.json(),
       ),
   })
@@ -18,7 +18,7 @@ export const useCakeApi = () => {
 export const useCustomCakeApi = () => {
   const customCakeList = () => useQuery({
     queryFn: () =>
-      fetch('https://sweet-dreams-bakery-sweet-dreams-bakery-pr-4.up.railway.app/cake/property')
+      fetch('https://sweet-dreams-bakery-production.up.railway.app/cake/property')
         .then((res) => res.json(),
       ),
   })
