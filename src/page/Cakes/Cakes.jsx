@@ -37,7 +37,7 @@ export default function Cakes() {
 
     const onSubmit = (data) => {
         const cake = { id: 1, 
-        name: "Bolo Personalizado", description: `Bolo personalizado de ${data.recheio} com cobertura de ${data.cobertura} sabor ${data.sabor}`, amount: 30, quantity: 1 };
+        name: "Bolo Personalizado", description: `Bolo personalizado de ${data.recheio} com cobertura de ${data.cobertura} sabor ${data.sabor}`, price: 30, quantity: 1 };
         setOpenModal(false);
         addCakeAction(cake);
         notify();
