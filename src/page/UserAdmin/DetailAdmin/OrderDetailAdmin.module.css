@@ -1,0 +1,53 @@
+.content{
+    display: flex;
+    padding-top: 1rem;
+    border-bottom: 1px solid black;
+    justify-content: space-between;
+}
+
+.detailHearderInfo{
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+}
+
+.iconButton{
+    all: unset;
+    cursor: pointer;
+}
+
+.iconButton:hover {
+    transform: scale(1.2);
+}
+
+.status{
+    border: 1px solid black;
+    border-radius: 30px;  
+    display: flex;
+    text-transform: uppercase;
+    align-items: center;
+    width: 100%;
+    padding: 0.6rem;
+}
+
+.button {
+    width: 200px;
+    background-color: #493979;
+    border-radius: 15px;
+    color: white;
+    border:none;
+    font-size: 20px;
+    padding: 1rem;
+    padding-bottom: 1rem;
+}
+
+.button:hover {
+    background-color: #221055;
+    transform: scale(1.1);
+}
+
+.controlButton {
+    padding-top: 1rem;
+    display: grid;
+    place-content: center;
+}

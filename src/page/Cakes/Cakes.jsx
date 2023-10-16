@@ -29,14 +29,14 @@ export default function Cakes() {
 
     const recheio = [
         { value: 0, name: "Chocolate" },
-        { value: 1, name: "Creme" },
-        { value: 2, name: "Laranja" },
+        { value: 1, name: "Prestigio" },
+        { value: 2, name: "Ninho" },
     ]
 
     const cobertura = [
-        { value: 0, name: "Caramelo" },
-        { value: 1, name: "Chocolate" },
-        { value: 2, name: "Coco" },
+        { value: 0, name: "Beijinho" },
+        { value: 1, name: "Brigadeiro" },
+        { value: 2, name: "Leite Ninho" },
     ]
 
     const tamanho = [
@@ -46,9 +46,9 @@ export default function Cakes() {
     ]
 
     const sabor = [
-        { value: 0, name: "Coco" },
-        { value: 1, name: "Abacaxi" },
-        { value: 2, name: "Chocolate" },
+        { value: 0, name: "Chocolate" },
+        { value: 1, name: "Prestigio" },
+        { value: 2, name: "Ninho" },
     ]
 
     const handleAddToCart = (cake) => {
@@ -86,7 +86,7 @@ export default function Cakes() {
                 <div className={styles.containerselect}>
                     <form onSubmit={handleSubmit(onSubmit)} >
 
-                        <label htmlFor="recheio">Cobertura:</label>
+                        <label htmlFor="recheio">Recheio:</label>
                         <select className={styles.select} id="recheio" {...register('recheio')}>
                             {recheio.map((data, index) => (
                                 <option value={data.value} key={index}>{data.name}</option>
