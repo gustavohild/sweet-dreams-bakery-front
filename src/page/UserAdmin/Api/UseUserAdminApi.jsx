@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query"
 const useUserAdminApi = () => {
   
     const list = async (token) => {
-    const response = await fetch('http://https://sweet-dreams-bakery-production.up.railway.app/order', {
+    const response = await fetch('https://sweet-dreams-bakery-production.up.railway.app/order', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -18,7 +18,7 @@ const useUserAdminApi = () => {
   const get = (token, email) => useQuery({
     queryKey: ['userData'],
     queryFn: () =>
-      fetch(`http://https://sweet-dreams-bakery-production.up.railway.app/customer?email=${email}`, {
+      fetch(`https://sweet-dreams-bakery-production.up.railway.app/customer?email=${email}`, {
         method: 'GET',
         headers: { 
           Authorization: `Bearer ${token}`, 
@@ -29,7 +29,7 @@ const useUserAdminApi = () => {
   })
 
   const patch = async (token, orderId, status) => {
-    const response = await fetch(`http://https://sweet-dreams-bakery-production.up.railway.app/order/${orderId}/change-status?status=${status}`, {
+    const response = await fetch(`https://sweet-dreams-bakery-production.up.railway.app/order/${orderId}/change-status?status=${status}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
