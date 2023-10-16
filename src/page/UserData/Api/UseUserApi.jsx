@@ -27,9 +27,23 @@ const useUserApi = () => {
         ),
   })
 
+  const list = async (token, id) => {
+    const response = await fetch(`http://localhost:8080/order?customer_id=${id}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`, 
+      }
+    }); if (!response.ok) {
+      throw new ResponseError('Não foi possível editar o usuário', response);
+    }
+    return await response.json();
+  };
+
   return {
     get,
-    put
+    put,
+    list
   }
 }
 

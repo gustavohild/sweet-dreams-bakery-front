@@ -11,11 +11,14 @@ import { AppProviderContext } from '../../shared/Providers/AppProviders';
 export default function User() {
     const { token, name, setAuthAction } = useContext(AppProviderContext)
 
-    const [formDisabled, setFormDisabled] = useState(true)
-    const [loading, setLoading] = useState(false)
+    const [formDisabled, setFormDisabled] = useState(true);
+    const [loading, setLoading] = useState(false);
+    const [userOrder, setUserOrder] = useState(null);
 
-    const { get, put } = useUserApi();
+    const { get, put, list, id } = useUserApi();
     const { data, isLoading } = get(token, name);
+    
+    
 
     const formScheme = orderDetailFormScheme();
     const { register, setValue, handleSubmit, formState: { errors } } = useForm({
@@ -29,7 +32,7 @@ export default function User() {
             await put(token, formatedData)
             toast.success("Cadastro atualizado com sucesso!", { position: toast.POSITION.TOP_CENTER });
             setLoading(false)
-        } catch (error){
+        } catch (error) {
             console.log('Texto erro', error.message)
             toast.error("Não foi possível atualizar seu cadastro, tente novamente.", { position: toast.POSITION.TOP_CENTER });
             setLoading(false)
@@ -37,13 +40,13 @@ export default function User() {
     }
     useEffect(() => {
         if (data && data.length) {
-            setAuthAction(name, token, data[0].id)
+            setAuthAction(name, token, data[0].id)          
             setValue('id', data[0].id)
             setValue('name', data[0].name)
             setValue('email', data[0].email)
             setValue('password', data[0].password)
             setValue('phone', data[0].phone)
-            if(data[0].addressList.length){
+            if (data[0].addressList.length) {
                 setValue('addressList.street', data[0].addressList[0].street)
                 setValue('addressList.number', data[0].addressList[0].number)
                 setValue('addressList.neighborhood', data[0].addressList[0].neighborhood)
@@ -51,7 +54,7 @@ export default function User() {
                 setValue('addressList.state', data[0].addressList[0].state)
                 setValue('addressList.zip', data[0].addressList[0].zip)
             }
-            
+            list(token, data[0].id).then(response => setUserOrder(response))
         }
     }, [data])
 
@@ -126,18 +129,21 @@ export default function User() {
                     </div>
                 </form>
             )}
-            <div className={styles.content}>
-                <div className={styles.detailHeader}>
-                    <h3>Pedidos realizados</h3>
-                    <div className={styles.detailHearderInfo}>
-                        <h3>Status</h3>
-                        <h3>Detalhes</h3>
+            {userOrder && (
+                <div className={styles.content}>
+                    <div className={styles.detailHeader}>
+                        <h3>Pedidos realizados</h3>
+                        <div className={styles.detailHearderInfo}>
+                            <h3>Status</h3>
+                            <h3>Detalhes</h3>
+                        </div>
                     </div>
+                    {userOrder.length && userOrder.map((data, index) => (
+                        <OrderDetail data={data} key={index} />
+                    ))}
                 </div>
-                <OrderDetail />
-                <OrderDetail />
-                <OrderDetail />
-            </div>
+            )}
+
 
         </div>
     )

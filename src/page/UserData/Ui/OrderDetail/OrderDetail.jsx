@@ -4,21 +4,21 @@ import * as styles from './OrderDetail.module.css'
 import 'boxicons'
 import UiModal from '../../../../shared/UI/UiModal/UiModal';
 
-export default function OrderDetail(orderDetailData) {
+export default function OrderDetail({data}) {
 
     const [openModal, setOpenModal] = useState(false)
 
     return (
         <div className={styles.content}>
             <div>
-                <p><strong>Nº DO PEDIDO:</strong> 13044800</p>
-                <p><strong>DATA PEDIDO:</strong> 26/09/2023</p>
+                <p><strong>Número do pedido: </strong>{data.id}</p>
+                <p><strong>DATA PEDIDO: </strong>{data.createdDate}</p>
             </div>
             <div>
-                Bolo de fuba
+                {data.name}
             </div>
             <div className={styles.detailHearderInfo}>
-                <strong>Aguardando pagamento</strong>
+                <strong>{data.status}</strong>
                 <button className={styles.iconButton} onClick={() => setOpenModal('true')}><box-icon name='search-alt-2'></box-icon></button>
             </div>
             <UiModal isOpen={openModal} title='PIX' setModalOpen={() => setOpenModal(!openModal)}>

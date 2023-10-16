@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import styles from "./EventsCard.module.css"
-import Foto from "../../../../assets/foto.svg"
+import Foto from "../../../../assets/festa.svg"
 import { AppProviderContext } from '../../../../shared/Providers/AppProviders';
 import { ToastContainer, toast } from 'react-toastify';
 
