@@ -15,8 +15,7 @@ import { useCakeApi, useCustomCakeApi }  from './Api/UseCakeApi';
 
 export default function Cakes() {
     const { customCakeList } = useCustomCakeApi();
-    const { data: customCakeApi } = customCakeList();
-    const [ customCake, setCustomCake] = React.useState(customCakeApi);
+    const { data: customCake } = customCakeList();
     const { list } = useCakeApi();
     const { data, isLoading } = list();
     console.log(customCake);
@@ -36,8 +35,15 @@ export default function Cakes() {
     }
 
     const onSubmit = (data) => {
+        let price = 20
+        if (data.tamanho==="M"){
+            price = 30
+        }
+        if (data.tamanho==="G"){
+            price = 35
+        }
         const cake = { id: 1, 
-        name: "Bolo Personalizado", description: `Bolo personalizado de ${data.recheio} com cobertura de ${data.cobertura} sabor ${data.sabor}`, price: 30, quantity: 1 };
+        name: "Bolo Personalizado", description: `Bolo personalizado de ${data.recheio} com cobertura de ${data.cobertura} sabor ${data.sabor}`, price: price, quantity: 1 };
         setOpenModal(false);
         addCakeAction(cake);
         notify();
